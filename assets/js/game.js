@@ -98,6 +98,12 @@ var fight = function(enemyName) {
 
   // function to start a new game
   var startGame = function() {
+      fight(pickedEnemyName);
+
+      // if we're not at the last enemy in the array
+      if (playerHealth > 0 && i < enemyNames.length - 1) {
+          shop();
+      }
     // reset player stats
     playerHealth = 100;
     playerAttack = 10;
@@ -140,4 +146,8 @@ var fight = function(enemyName) {
     else {
         window.alert("Thank you for playing Robot Gladiators! Come back soon!");
     }
+  };
+
+  var shop = function() {
+      console.log("entered the shop");
   };
